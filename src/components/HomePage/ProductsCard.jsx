@@ -1,24 +1,31 @@
 import Image from "next/image";
 import React from "react";
+import { FaHeart, FaRegHeart } from "react-icons/fa6";
 
 const ProductsCard = ({ product }) => {
   return (
-    <div className="card bg-base-100 shadow-sm">
-      <figure>
+    <div className="rounded-xl shadow-md bg-base-100 p-5 space-y-5">
+      <div className="relative w-full aspect-square">
         <Image
           src={product.image}
           alt="Shoes"
-          width={300}
-          height={300}
-          className="w-full"
+          fill
+          className="object-cover rounded-xl transition-transform duration-300 hover:scale-110"
         />
-      </figure>
-      <div className="card-body">
-        <h2 className="card-title">{product.name}</h2>
-        <div className="card-actions">
-          <button className="btn bg-orange-500 w-full rounded-full">Buy Now</button>
-        </div>
+        <p className="bg-gray-200 px-1 py-3 flex justify-center rounded-full w-10 absolute top-2 right-2">
+          <FaHeart color="orange" />
+        </p>
       </div>
+      <div className="flex justify-between">
+        <p className="text-xl text-indigo-400">{product.category}</p>
+        <p className="text-xl text-orange-400">${product.price}</p>
+      </div>
+      <div className="">
+        <h1 className="text-2xl font-semibold">{product.name}</h1>
+      </div>
+      <button className="btn bg-orange-500 w-full text-white rounded-full">
+        Show Details
+      </button>
     </div>
   );
 };
