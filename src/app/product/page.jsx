@@ -4,6 +4,7 @@ import React from "react";
 const page = async () => {
   const res = await fetch(
     "https://summer-essentials-store-xi.vercel.app/Data.json",
+    { cache: "no-store" }
   );
   const data = await res.json();
   const products = data;

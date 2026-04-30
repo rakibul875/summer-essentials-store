@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const PopularProducts = async () => {
   const res = await fetch(
-    "https://summer-essentials-store-xi.vercel.app/Data.json",
+    "https://summer-essentials-store-xi.vercel.app/Data.json", {cache: 'no-store'}
   );
   const data = await res.json();
   const products = data.slice(0, 3);
