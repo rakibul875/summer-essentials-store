@@ -7,7 +7,7 @@
     "rating": 4.7,
     "stock": 10,
     "description": "Stylish UV protection sunglasses perfect for summer outings.",
-    "image": "https://picsum.photos/seed/sunglasses/400/300",
+    "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083",
     "category": "Accessories"
   },
   {
@@ -18,7 +18,7 @@
     "rating": 4.5,
     "stock": 8,
     "description": "Lightweight breathable shirt for hot summer days.",
-    "image": "https://picsum.photos/seed/shirt/400/300",
+    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab",
     "category": "Clothing"
   },
   {
@@ -29,7 +29,7 @@
     "rating": 4.6,
     "stock": 15,
     "description": "Wide brim straw hat for sun protection.",
-    "image": "https://picsum.photos/seed/hat/400/300",
+    "image": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c",
     "category": "Accessories"
   },
   {
@@ -40,7 +40,7 @@
     "rating": 4.8,
     "stock": 12,
     "description": "Hydrating sunscreen with strong UV protection.",
-    "image": "https://picsum.photos/seed/sunscreen/400/300",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk7gGNuhmLUKkMGhgDy8ZP4k0Ot1mMkquRSw&s",
     "category": "Skincare"
   },
   {
@@ -51,7 +51,7 @@
     "rating": 4.3,
     "stock": 20,
     "description": "Comfortable slippers perfect for beach use.",
-    "image": "https://picsum.photos/seed/slippers/400/300",
+    "image": "https://images.unsplash.com/photo-1593032465171-8eae6b3a6b1b",
     "category": "Footwear"
   },
   {
@@ -62,7 +62,7 @@
     "rating": 4.4,
     "stock": 9,
     "description": "Trendy tote bag for daily summer essentials.",
-    "image": "https://picsum.photos/seed/totebag/400/300",
+    "image": "https://images.unsplash.com/photo-1592878849122-6b9d0b2b36a1",
     "category": "Accessories"
   },
   {
@@ -73,7 +73,7 @@
     "rating": 4.5,
     "stock": 11,
     "description": "Quick-dry beach shorts for swimming and fun.",
-    "image": "https://picsum.photos/seed/shorts/400/300",
+    "image": "https://images.unsplash.com/photo-1599058917765-a780eda07a3e",
     "category": "Clothing"
   },
   {
@@ -84,7 +84,7 @@
     "rating": 4.2,
     "stock": 18,
     "description": "Lightweight flip flops for summer comfort.",
-    "image": "https://picsum.photos/seed/flipflop/400/300",
+    "image": "https://images.unsplash.com/photo-1528701800489-20be3c3c4e7b",
     "category": "Footwear"
   },
   {
@@ -95,7 +95,7 @@
     "rating": 4.6,
     "stock": 14,
     "description": "Insulated bottle to keep your drinks cold.",
-    "image": "https://picsum.photos/seed/bottle/400/300",
+    "image": "https://images.unsplash.com/photo-1526401485004-2aa7a4b2f6e1",
     "category": "Accessories"
   },
   {
@@ -106,7 +106,7 @@
     "rating": 4.5,
     "stock": 17,
     "description": "Soft and absorbent towel for beach days.",
-    "image": "https://picsum.photos/seed/towel/400/300",
+    "image": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c",
     "category": "Accessories"
   }
 ]
