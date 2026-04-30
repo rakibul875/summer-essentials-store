@@ -1,6 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
-import { FaHeart, FaRegHeart } from "react-icons/fa6";
+import { FaHeart } from "react-icons/fa6";
 
 const ProductsCard = ({ product }) => {
   return (
@@ -23,9 +24,11 @@ const ProductsCard = ({ product }) => {
       <div className="">
         <h1 className="text-2xl font-semibold">{product.name}</h1>
       </div>
-      <button className="btn bg-orange-500 w-full text-white rounded-full">
-        Show Details
-      </button>
+      <Link href={`/product/${product.id}`}>
+        <button className="btn bg-orange-500 w-full text-white rounded-full">
+          Show Details
+        </button>
+      </Link>
     </div>
   );
 };
