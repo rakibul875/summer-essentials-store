@@ -7,7 +7,7 @@
     "rating": 4.7,
     "stock": 10,
     "description": "Stylish UV protection sunglasses perfect for summer outings.",
-    "image": "https://source.unsplash.com/featured/?sunglasses",
+    "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083",
     "category": "Accessories"
   },
   {
@@ -18,7 +18,7 @@
     "rating": 4.5,
     "stock": 8,
     "description": "Lightweight breathable shirt for hot summer days.",
-    "image": "https://source.unsplash.com/featured/?summer-shirt",
+    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab",
     "category": "Clothing"
   },
   {
@@ -29,7 +29,7 @@
     "rating": 4.6,
     "stock": 15,
     "description": "Wide brim straw hat for sun protection.",
-    "image": "https://source.unsplash.com/featured/?beach-hat",
+    "image": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c",
     "category": "Accessories"
   },
   {
@@ -40,7 +40,7 @@
     "rating": 4.8,
     "stock": 12,
     "description": "Hydrating sunscreen with strong UV protection.",
-    "image": "https://source.unsplash.com/featured/?sunscreen",
+    "image": "https://images.unsplash.com/photo-1585386959984-a4155223f7a1",
     "category": "Skincare"
   },
   {
@@ -51,7 +51,7 @@
     "rating": 4.3,
     "stock": 20,
     "description": "Comfortable slippers perfect for beach use.",
-    "image": "https://source.unsplash.com/featured/?slippers",
+    "image": "https://images.unsplash.com/photo-1593032465171-8eae6b3a6b1b",
     "category": "Footwear"
   },
   {
@@ -62,7 +62,7 @@
     "rating": 4.4,
     "stock": 9,
     "description": "Trendy tote bag for daily summer essentials.",
-    "image": "https://source.unsplash.com/featured/?tote-bag",
+    "image": "https://images.unsplash.com/photo-1592878849122-6b9d0b2b36a1",
     "category": "Accessories"
   },
   {
@@ -73,7 +73,7 @@
     "rating": 4.5,
     "stock": 11,
     "description": "Quick-dry beach shorts for swimming and fun.",
-    "image": "https://source.unsplash.com/featured/?beach-shorts",
+    "image": "https://images.unsplash.com/photo-1599058917765-a780eda07a3e",
     "category": "Clothing"
   },
   {
@@ -84,7 +84,7 @@
     "rating": 4.2,
     "stock": 18,
     "description": "Lightweight flip flops for summer comfort.",
-    "image": "https://source.unsplash.com/featured/?flip-flops",
+    "image": "https://images.unsplash.com/photo-1528701800489-20be3c3c4e7b",
     "category": "Footwear"
   },
   {
@@ -95,7 +95,7 @@
     "rating": 4.6,
     "stock": 14,
     "description": "Insulated bottle to keep your drinks cold.",
-    "image": "https://source.unsplash.com/featured/?water-bottle",
+    "image": "https://images.unsplash.com/photo-1526401485004-2aa7a4b2f6e1",
     "category": "Accessories"
   },
   {
@@ -106,62 +106,7 @@
     "rating": 4.5,
     "stock": 17,
     "description": "Soft and absorbent towel for beach days.",
-    "image": "https://source.unsplash.com/featured/?beach-towel",
-    "category": "Accessories"
-  },
-  {
-    "id": 11,
-    "name": "Sun Protection Umbrella",
-    "brand": "ShadePro",
-    "price": 22,
-    "rating": 4.4,
-    "stock": 7,
-    "description": "UV resistant umbrella for strong sunlight.",
-    "image": "https://source.unsplash.com/featured/?umbrella",
-    "category": "Accessories"
-  },
-  {
-    "id": 12,
-    "name": "After Sun Gel",
-    "brand": "SkinRelief",
-    "price": 11,
-    "rating": 4.7,
-    "stock": 13,
-    "description": "Soothing gel to cool skin after sun exposure.",
-    "image": "https://source.unsplash.com/featured/?aloe-vera",
-    "category": "Skincare"
-  },
-  {
-    "id": 13,
-    "name": "Lightweight Summer Dress",
-    "brand": "BreezeFashion",
-    "price": 30,
-    "rating": 4.6,
-    "stock": 6,
-    "description": "Comfortable and stylish dress for summer.",
-    "image": "https://source.unsplash.com/featured/?summer-dress",
-    "category": "Clothing"
-  },
-  {
-    "id": 14,
-    "name": "Portable Mini Fan",
-    "brand": "CoolAir",
-    "price": 17,
-    "rating": 4.5,
-    "stock": 10,
-    "description": "Rechargeable mini fan for hot weather.",
-    "image": "https://source.unsplash.com/featured/?mini-fan",
-    "category": "Electronics"
-  },
-  {
-    "id": 15,
-    "name": "Beach Backpack",
-    "brand": "TravelLite",
-    "price": 26,
-    "rating": 4.4,
-    "stock": 8,
-    "description": "Durable backpack for beach travel.",
-    "image": "https://source.unsplash.com/featured/?backpack",
+    "image": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c",
     "category": "Accessories"
   }
 ]
