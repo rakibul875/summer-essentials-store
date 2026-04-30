@@ -27,7 +27,7 @@ const PopularProducts = async () => {
             </Link>
           </div>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-3 p-5 lg:p-15 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-5 lg:p-15 gap-5">
           {products.map((product) => (
             <ProductsCard key={product.id} product={product} />
           ))}
