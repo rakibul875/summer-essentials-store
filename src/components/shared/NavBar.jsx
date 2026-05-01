@@ -57,10 +57,10 @@ const NavBar = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end gap-2">
-          <Link href={''}>
+          <Link href={'/login'}>
             <button className="btn border border-orange-500 text-orange-500 rounded-sm">Login</button>
           </Link>
-          <Link href={''}>
+          <Link href={'/sineUp'}>
             <button className="btn bg-orange-500 text-white rounded-sm">Register</button>
           </Link>
          
