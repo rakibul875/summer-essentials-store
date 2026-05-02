@@ -1,8 +1,18 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import NavLink from "./NavLink";
+import { authClient } from "@/lib/auth-client";
+import { Avatar } from "@heroui/react";
 
 const NavBar = () => {
+  const userData = authClient.useSession();
+  const user = userData.data?.user;
+  
+  const handelSgnOut= async()=>{
+    await authClient.signOut();
+  }
+
   const links = (
     <>
       <li className="font-semibold text-lg">
@@ -57,13 +67,33 @@ const NavBar = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end gap-2">
-          <Link href={'/login'}>
-            <button className="btn border border-orange-500 text-orange-500 rounded-sm">Login</button>
-          </Link>
-          <Link href={'/sineUp'}>
-            <button className="btn bg-orange-500 text-white rounded-sm">Register</button>
-          </Link>
-         
+          <div className="navbar-end gap-2">
+            {user ? (
+              <div className="flex gap-3">
+                <Avatar>
+                  <Avatar.Image
+                    alt="John Doe"
+                    src={user?.image}
+                    referrerPolicy="no-referrer"
+                  />
+                  <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
+                </Avatar>
+                <button onClick={handelSgnOut} className="btn bg-orange-500 text-white">Logout</button>
+              </div>
+            ) : (
+              <div>
+                <Link
+                  href="/login"
+                  className="btn border border-orange-500 text-orange-500"
+                >
+                  Login
+                </Link>
+                <Link href="/sineUp" className="btn bg-orange-500 text-white">
+                  Register
+                </Link>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
