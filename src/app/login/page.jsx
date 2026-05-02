@@ -1,31 +1,56 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { FaGoogle } from "react-icons/fa6";
 
 const LoginPage = () => {
+
+    
+  const searchParams = useSearchParams();
+
+  const redirect = searchParams.get("redirect");
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const handelLogin = async (data) => {
-    const { data: res, error } = await authClient.signIn.email({
-      email: data.email,
-      password: data.password,
-      rememberMe: true,
-      callbackURL: "/",
-    });
-  };
+const handelLogin = async (data) => {
+  const { data: res, error } = await authClient.signIn.email({
+    email: data.email,
+    password: data.password,
+    rememberMe: true,
+    callbackURL: redirect && redirect.startsWith("/")
+      ? redirect
+      : "/",
+  });
 
-  const handelGoogleLogin = async () => {
-    const data = await authClient.signIn.social({
-      provider: "google",
-    });
-  };
+  if (error) {
+    alert(error.message);
+    return;
+  }
+
+  console.log(res);
+};
+
+const handelGoogleLogin = async () => {
+  const { error } = await authClient.signIn.social({
+    provider: "google",
+    callbackURL: redirect && redirect.startsWith("/")
+      ? redirect
+      : "/",
+  });
+
+  if (error) {
+    console.log(error);
+  }
+};
+  
+  
 
   return (
     <div className="flex justify-center items-center bg-slate-100 container mx-auto my-10 rounded-2xl">
