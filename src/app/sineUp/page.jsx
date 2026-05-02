@@ -2,6 +2,7 @@
 import { authClient } from "@/lib/auth-client";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { FaGoogle } from "react-icons/fa6";
 
 const RegisterPage = () => {
   const {
@@ -13,20 +14,27 @@ const RegisterPage = () => {
   const handelRegister = async (data) => {
     const { name, image, email, password } = data;
 
-    const {data:res,error} = await authClient.signUp.email({
+    const { data: res, error } = await authClient.signUp.email({
       name: name,
       email: email,
       password: password,
       image: image,
       callbackURL: "/",
     });
-    if(error){
-        alert(error.message)
+    if (error) {
+      alert(error.message);
     }
-    if(res){
-        alert('SinUP Successfully')
+    if (res) {
+      alert("SinUP Successfully");
     }
   };
+
+  const handelGoogleRegister = async () => {
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
+  };
+
   return (
     <div className="flex justify-center items-center bg-slate-100 container mx-auto my-10 rounded-2xl">
       <div className="bg-white p-10 rounded-2xl my-5">
@@ -85,6 +93,10 @@ const RegisterPage = () => {
             Register
           </button>
         </form>
+        <p className="text-center text-2xl text-gray-500">Or</p>
+        <button onClick={handelGoogleRegister} className="btn btn-outline w-full rounded-full text-orange-500 mt-2">
+          <FaGoogle /> Continue With Google
+        </button>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { FaGoogle } from "react-icons/fa6";
 
 const LoginPage = () => {
   const {
@@ -18,8 +19,15 @@ const LoginPage = () => {
       rememberMe: true,
       callbackURL: "/",
     });
-    console.log(res,error)
+    console.log(res, error);
   };
+
+  const handelGoogleLogin = async () => {
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
+  };
+
   return (
     <div className="flex justify-center items-center bg-slate-100 container mx-auto my-10 rounded-2xl">
       <div className="bg-white p-10 rounded-2xl my-5">
@@ -52,6 +60,14 @@ const LoginPage = () => {
           </fieldset>
           <button className="btn w-full bg-slate-800 text-white">Login</button>
         </form>
+
+        <button
+          onClick={handelGoogleLogin}
+          className="btn btn-outline w-full rounded-full text-orange-500 mt-2"
+        >
+          <FaGoogle /> Continue With Google
+        </button>
+
         <p className="mt-2">
           Dont Have An Account
           <Link href={"/sineUp"} className="text-lg text-red-400">
