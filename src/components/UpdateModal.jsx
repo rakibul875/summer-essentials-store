@@ -1,14 +1,17 @@
 "use client";
-import { authClient } from "@/lib/auth-client";
-import React from "react";
-import { BiEdit } from "react-icons/bi";
 
-const UpdateModal = () => {
+import { authClient } from "@/lib/auth-client";
+import { Button, Input, Label, Modal, Surface, TextField } from "@heroui/react";
+import { BiEdit, BiUser } from "react-icons/bi";
+
+export function UpdateModal() {
+
   const handelUpdate = async (e) => {
-    e.preventDefault;
+    e.preventDefault();
     const name = e.target.name.value;
     const image = e.target.image.value;
 
+    console.log(name, image)
     
     await authClient.updateUser({
       name,
@@ -16,52 +19,43 @@ const UpdateModal = () => {
     });
   };
 
+
   return (
-    <div>
-      <button
-        className="btn rounded-2xl btn-soft btn-info"
-        onClick={() => document.getElementById("my_modal_5").showModal()}
-      >
-        <BiEdit /> Update Profile
-      </button>
-
-      <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
-        <div className="modal-box">
-          <form onSubmit={handelUpdate} method="dialog" className="space-y-5">
-            <fieldset className="fieldset">
-              <legend className="fieldset-legend text-xl">
-                Enter Your Name
-              </legend>
-              <input
-                type="text"
-                name="name"
-                className="input w-full"
-                placeholder="Enter Your Name"
-              />
-            </fieldset>
-
-            <fieldset className="fieldset">
-              <legend className="fieldset-legend text-xl">
-                Enter Your New Photo URL
-              </legend>
-              <input
-                type="text"
-                className="input w-full"
-                name="image"
-                placeholder="Enter Your Photo URL"
-              />
-            </fieldset>
-            <div className="flex justify-end gap-2">
-              <button className="btn">Cancel</button>
-              <button type="submit" className="btn bg-slate-800 text-white">
-                Update
-              </button>
-            </div>
-          </form>
-        </div>
-      </dialog>
-    </div>
+    <Modal>
+      <Button variant="secondary"><BiEdit/> Profile Update</Button>
+      <Modal.Backdrop>
+        <Modal.Container placement="auto">
+          <Modal.Dialog className="sm:max-w-md">
+            <Modal.CloseTrigger />
+            <Modal.Header>
+              <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
+                <BiUser className="size-5" />
+              </Modal.Icon>
+              <Modal.Heading>Update Your Profile</Modal.Heading>
+            </Modal.Header>
+            <Modal.Body className="p-6">
+              <Surface variant="default">
+                <form onSubmit={handelUpdate} className="flex flex-col gap-4">
+                  <TextField className="w-full" name="name" type="text">
+                    <Label>Name</Label>
+                    <Input placeholder="Enter your name" required/>
+                  </TextField>
+                  <TextField className="w-full" name="image" type="text">
+                    <Label>Photo URL</Label>
+                    <Input placeholder="Enter your Photo URL" required/>
+                  </TextField>
+                  <Modal.Footer>
+                    <Button slot="close" variant="secondary">
+                      Cancel
+                    </Button>
+                    <Button type="submit" slot="close">Update</Button>
+                  </Modal.Footer>
+                </form>
+              </Surface>
+            </Modal.Body>
+          </Modal.Dialog>
+        </Modal.Container>
+      </Modal.Backdrop>
+    </Modal>
   );
-};
-
-export default UpdateModal;
+}

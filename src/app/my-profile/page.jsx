@@ -1,6 +1,6 @@
 "use client";
 
-import UpdateModal from "@/components/UpdateModal";
+import { UpdateModal } from "@/components/UpdateModal";
 import { authClient } from "@/lib/auth-client";
 import { Avatar } from "@heroui/react";
 import React from "react";
@@ -24,7 +24,7 @@ const page = () => {
           <p className="text-xl text-gray-500">{user?.email}</p>
         </div>
         <div className="text-center mt-3">
-          <UpdateModal />
+          <UpdateModal/>
         </div>
       </div>
     </div>
