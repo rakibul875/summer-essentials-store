@@ -1,14 +1,19 @@
 "use client";
+import { authClient } from "@/lib/auth-client";
 import React from "react";
 import { BiEdit } from "react-icons/bi";
 
 const UpdateModal = () => {
-
-
-  const onSubmit = async (data) => {
-    console.log(data);
+  const handelUpdate = async (e) => {
+    e.preventDefault;
+    const name = e.target.name.value;
+    const image = e.target.image.value;
 
     
+    await authClient.updateUser({
+      name,
+      image
+    });
   };
 
   return (
@@ -22,27 +27,35 @@ const UpdateModal = () => {
 
       <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
-          <form method="dialog" className="space-y-5">
+          <form onSubmit={handelUpdate} method="dialog" className="space-y-5">
             <fieldset className="fieldset">
-              <legend className="fieldset-legend text-xl">Enter Your Name</legend>
+              <legend className="fieldset-legend text-xl">
+                Enter Your Name
+              </legend>
               <input
                 type="text"
+                name="name"
                 className="input w-full"
                 placeholder="Enter Your Name"
               />
             </fieldset>
 
             <fieldset className="fieldset">
-              <legend className="fieldset-legend text-xl">Enter Your New Photo URL</legend>
+              <legend className="fieldset-legend text-xl">
+                Enter Your New Photo URL
+              </legend>
               <input
                 type="text"
                 className="input w-full"
+                name="image"
                 placeholder="Enter Your Photo URL"
               />
             </fieldset>
             <div className="flex justify-end gap-2">
               <button className="btn">Cancel</button>
-              <button className="btn bg-slate-800 text-white">Update</button>
+              <button type="submit" className="btn bg-slate-800 text-white">
+                Update
+              </button>
             </div>
           </form>
         </div>
