@@ -1,8 +1,5 @@
 "use client";
-
-import { authClient } from "@/lib/auth-client";
 import React from "react";
-import { useForm } from "react-hook-form";
 import { BiEdit } from "react-icons/bi";
 
 const UpdateModal = () => {
@@ -11,13 +8,7 @@ const UpdateModal = () => {
   const onSubmit = async (data) => {
     console.log(data);
 
-    // example login
-    // const { data: res, error } = await authClient.signIn.email({
-    //   email: data.email,
-    //   password: data.password,
-    //   rememberMe: true,
-    //   callbackURL: "/",
-    // });
+    
   };
 
   return (
@@ -33,20 +24,20 @@ const UpdateModal = () => {
         <div className="modal-box">
           <form method="dialog" className="space-y-5">
             <fieldset className="fieldset">
-              <legend className="fieldset-legend text-xl">Email Address</legend>
+              <legend className="fieldset-legend text-xl">Enter Your Name</legend>
               <input
-                type="email"
+                type="text"
                 className="input w-full"
-                placeholder="Enter Your Email"
+                placeholder="Enter Your Name"
               />
             </fieldset>
 
             <fieldset className="fieldset">
-              <legend className="fieldset-legend text-xl">Password</legend>
+              <legend className="fieldset-legend text-xl">Enter Your New Photo URL</legend>
               <input
-                type="password"
+                type="text"
                 className="input w-full"
-                placeholder="Enter Your Password"
+                placeholder="Enter Your Photo URL"
               />
             </fieldset>
             <div className="flex justify-end gap-2">
