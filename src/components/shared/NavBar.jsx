@@ -84,7 +84,7 @@ const NavBar = () => {
                 <button onClick={handelSgnOut} className="btn bg-orange-500 text-white">Logout</button>
               </div>
             ) : (
-              <div className="flex gap-3">
+              <div className="flex gap-1 lg:gap-3">
                 <Link
                   href="/login"
                   className="btn border border-orange-500 text-orange-500"
