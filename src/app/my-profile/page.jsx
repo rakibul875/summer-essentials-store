@@ -8,14 +8,24 @@ import React from "react";
 
 const MyProfile = () => {
   //edit
-  const router=useRouter()
-  
+  const router = useRouter();
+
   const userData = authClient.useSession();
   const user = userData.data?.user;
   //edit
-  if(!user){
-   router.push('/login')
-  }
+  // if(!user){
+  //  router.push('/login')
+  // }
+
+ { onSuccess: (ctx) => {
+    router.back()
+    
+  },{
+    onError:(ctx)=>{
+      router.push('/login')
+    }
+  }}
+
   return (
     <div className="container mx-auto bg-slate-300 p-5 lg:p-10 my-10">
       <div className="bg-base-100 w-90 lg:w-100 mx-auto shadow p-5 rounded-xl border-b-4 border-b-orange-500">
