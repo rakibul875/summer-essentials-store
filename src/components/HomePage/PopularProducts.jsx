@@ -1,6 +1,7 @@
 import React from "react";
 import ProductsCard from "./ProductsCard";
 import Link from "next/link";
+import { FaLongArrowAltRight } from "react-icons/fa";
 
 const PopularProducts = async () => {
   const res = await fetch(
@@ -22,7 +23,7 @@ const PopularProducts = async () => {
           <div className="">
             <Link href={'/product'}>
               <button className="btn btn-soft border-orange-400 text-orange-400">
-                View All Products
+                View All Products<FaLongArrowAltRight />
               </button>
             </Link>
           </div>

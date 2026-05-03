@@ -5,6 +5,7 @@ import AloVra from "@/assets/image/aloVra.jpg";
 import { MdOpacity, MdOutlineWbSunny } from "react-icons/md";
 import { FaEye } from "react-icons/fa6";
 import { TbTemperatureSun } from "react-icons/tb";
+import { FaLongArrowAltRight } from "react-icons/fa";
 
 const CareGuide = () => {
   return (
@@ -33,7 +34,7 @@ const CareGuide = () => {
                 </p>
                 <div className="justify-start card-actions">
                   <button className="btn hover:bg-orange-500 hover:text-white btn-outline rounded-xl border-orange-500 text-orange-500">
-                    Read Guide
+                    Read Guide <FaLongArrowAltRight />
                   </button>
                 </div>
               </div>
