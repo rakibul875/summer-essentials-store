@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { FaGoogle } from "react-icons/fa6";
+import { toast } from "react-toastify";
 
 const LoginPage = () => {
 
@@ -57,8 +58,10 @@ const handelLogin = async (data) => {
   });
 
   if (error) {
-    alert(error.message);
+    toast.error(error.message);
     return;
+  }else{
+    toast.success('Login successful')
   }
 
   console.log(res);
@@ -73,7 +76,7 @@ const handelGoogleLogin = async () => {
   });
 
   if (error) {
-    console.log(error);
+    toast.error(error);
   }
 };
   

@@ -5,9 +5,10 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { FaGoogle } from "react-icons/fa6";
+import { toast } from "react-toastify";
 
 const RegisterPage = () => {
-  const rout=useRouter()
+  const rout = useRouter();
   const {
     register,
     handleSubmit,
@@ -17,21 +18,24 @@ const RegisterPage = () => {
   const handelRegister = async (data) => {
     const { name, image, email, password } = data;
 
-    const { data: res, error } = await authClient.signUp.email({
-      name: name,
-      email: email,
-      password: password,
-      image: image,
-      callbackURL: "/",
-    },{
-      onSuccess:(ctx)=>{
-        rout.back()
-        alert("singUp successfully")
+    const { data: res, error } = await authClient.signUp.email(
+      {
+        name: name,
+        email: email,
+        password: password,
+        image: image,
+        callbackURL: "/",
       },
-     onError:(ctx)=>{
-      alert(ctx.error.message)
-     }
-    });
+      {
+        onSuccess: (ctx) => {
+          rout.back();
+          toast.success(`SingUp Successfully`);
+        },
+        onError: (ctx) => {
+          toast.error(`${ctx.error.message}`);
+        },
+      },
+    );
   };
 
   const handelGoogleRegister = async () => {
@@ -99,7 +103,10 @@ const RegisterPage = () => {
           </button>
         </form>
         <p className="text-center text-2xl text-gray-500">Or</p>
-        <button onClick={handelGoogleRegister} className="btn btn-outline w-full rounded-full text-orange-500 mt-2">
+        <button
+          onClick={handelGoogleRegister}
+          className="btn btn-outline w-full rounded-full text-orange-500 mt-2"
+        >
           <FaGoogle /> Continue With Google
         </button>
       </div>
