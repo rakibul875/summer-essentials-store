@@ -12,14 +12,14 @@ export async function proxy(request) {
     return NextResponse.next();
   }
 
-  // const loginUrl = new URL("/login", request.url);
+  const loginUrl = new URL("/login", request.url);
 
-  // loginUrl.searchParams.set(
-  //   "redirect",
-  //   request.nextUrl.pathname + request.nextUrl.search
-  // );
+  loginUrl.searchParams.set(
+    "redirect",
+    request.nextUrl.pathname + request.nextUrl.search
+  );
 
-  return NextResponse.redirect(new URL("/login", request.url));
+  return NextResponse.redirect(loginUrl);
 }
 
 export const config = {

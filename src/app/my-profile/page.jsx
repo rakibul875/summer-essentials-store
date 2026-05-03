@@ -14,7 +14,7 @@ const MyProfile = () => {
   const user = userData.data?.user;
   //edit
   if(!user){
-   router.push('/')
+   router.push('/login')
   }
   return (
     <div className="container mx-auto bg-slate-300 p-5 lg:p-10 my-10">
