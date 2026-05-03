@@ -24,11 +24,11 @@ const RegisterPage = () => {
         email: email,
         password: password,
         image: image,
-        callbackURL: "/",
+        callbackURL: "/login",
       },
       {
         onSuccess: (ctx) => {
-          rout.back();
+          rout.push('/login');
           toast.success(`SingUp Successfully`);
         },
         onError: (ctx) => {

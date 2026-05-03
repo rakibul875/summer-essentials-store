@@ -1,6 +1,6 @@
 import React from "react";
 import { CiShare2 } from "react-icons/ci";
-import { FaCamera, FaEarthAsia } from "react-icons/fa6";
+import { FaCamera, FaEarthAsia, FaFacebook, FaInstagram, FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -28,9 +28,9 @@ const Footer = () => {
         <nav>
           <h6 className="footer-title">Support</h6>
           <a className="link link-hover">CONTACT US</a>
-          <a className="link link-hover">SHIPPING</a>
-          <a className="link link-hover">CARE TIPS</a>
-          <a className="link link-hover">FAQ</a>
+          <a className="link link-hover flex gap-2 items-center text-lg"><FaFacebook/> Facebook</a>
+          <a className="link link-hover flex gap-2 items-center text-lg"><FaInstagram/> Instagram</a>
+          <a className="link link-hover flex gap-2 items-center text-lg"><FaXTwitter/>Twitter</a>
         </nav>
         <nav>
           <h6 className="footer-title">Legal</h6>
@@ -38,6 +38,8 @@ const Footer = () => {
           <a className="link link-hover">PRIVACY POLICY</a>
         </nav>
       </footer>
+      <span className="border-b-2 border-gray-400 w-10/12 mx-auto my-10">Hello</span>
+
     </div>
   );
 };
