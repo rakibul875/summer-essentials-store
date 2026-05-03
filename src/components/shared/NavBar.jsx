@@ -4,14 +4,17 @@ import React from "react";
 import NavLink from "./NavLink";
 import { authClient } from "@/lib/auth-client";
 import { Avatar } from "@heroui/react";
+import { useRouter } from "next/navigation";
 
 const NavBar = () => {
   const userData = authClient.useSession();
   const user = userData.data?.user;
-  
+  const router = useRouter();
   const handelSgnOut= async()=>{
     await authClient.signOut();
+    router.push('/')
   }
+
 
   const links = (
     <>

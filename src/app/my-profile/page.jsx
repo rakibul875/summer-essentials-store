@@ -3,9 +3,11 @@
 import { UpdateModal } from "@/components/UpdateModal";
 import { authClient } from "@/lib/auth-client";
 import { Avatar } from "@heroui/react";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const page = () => {
+  
   const userData = authClient.useSession();
   const user = userData.data?.user;
   return (
@@ -24,7 +26,7 @@ const page = () => {
           <p className="text-xl text-gray-500">{user?.email}</p>
         </div>
         <div className="text-center mt-3">
-          <UpdateModal/>
+          <UpdateModal />
         </div>
       </div>
     </div>
