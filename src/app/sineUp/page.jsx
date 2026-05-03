@@ -1,10 +1,13 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
+import { router } from "better-auth/api";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { FaGoogle } from "react-icons/fa6";
 
 const RegisterPage = () => {
+  const rout=useRouter()
   const {
     register,
     handleSubmit,
@@ -20,13 +23,15 @@ const RegisterPage = () => {
       password: password,
       image: image,
       callbackURL: "/",
+    },{
+      onSuccess:(ctx)=>{
+        rout.back()
+        alert("singUp successfully")
+      },
+     onError:(ctx)=>{
+      alert(ctx.error.message)
+     }
     });
-    if (error) {
-      alert(error.message);
-    }
-    if (res) {
-      alert("SinUP Successfully");
-    }
   };
 
   const handelGoogleRegister = async () => {

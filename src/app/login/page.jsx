@@ -1,13 +1,14 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { FaGoogle } from "react-icons/fa6";
 
 const LoginPage = () => {
 
+  const router=useRouter()
     
   const searchParams = useSearchParams();
 
@@ -19,6 +20,32 @@ const LoginPage = () => {
     formState: { errors },
   } = useForm();
 
+// const handelLogin = async (data) => {
+//   const { data: res, error } = await authClient.signIn.email({
+//     email: data.email,
+//     password: data.password,
+//     rememberMe: true,
+//     callbackURL:'/'||redirect
+     
+//   },{
+//     onSuccess:(ctx)=>{
+//       if(!redirect){
+//         router.push('/')
+//       }
+//     },
+//     onError:(ctx)=>{
+//       alert(ctx.error.message)
+//     }
+
+//   });
+
+//   if (error) {
+//     alert(error.message);
+//     return;
+//   }
+
+//   console.log(res);
+// };
 const handelLogin = async (data) => {
   const { data: res, error } = await authClient.signIn.email({
     email: data.email,
