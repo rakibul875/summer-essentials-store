@@ -1,5 +1,5 @@
 import Animated from "@/components/Animated";
-import ProductsCard from "@/components/HomePage/ProductsCard";
+
 import React from "react";
 
 const page = async () => {

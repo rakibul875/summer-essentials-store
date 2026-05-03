@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { FaHeart } from "react-icons/fa6";
+import { FaHeart, FaRegStarHalfStroke, FaStar } from "react-icons/fa6";
 
 const ProductsCard = ({ product }) => {
   return (
@@ -22,6 +22,7 @@ const ProductsCard = ({ product }) => {
         <p className="text-xl text-orange-400">${product.price}</p>
       </div>
       <div className="">
+        <p className="text-xl text-orange-500 flex gap-1 items-center"><FaStar /> <FaRegStarHalfStroke />{product.rating}</p>
         <h1 className="text-2xl font-semibold">{product.name}</h1>
       </div>
       <Link href={`/product/${product.id}`}>
