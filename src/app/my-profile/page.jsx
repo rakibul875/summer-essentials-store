@@ -6,10 +6,16 @@ import { Avatar } from "@heroui/react";
 import { useRouter } from "next/navigation";
 import React from "react";
 
-const page = () => {
+const MyProfile = () => {
+  //edit
+  const router=useRouter()
   
   const userData = authClient.useSession();
   const user = userData.data?.user;
+  //edit
+  if(!user){
+   router.push('/')
+  }
   return (
     <div className="container mx-auto bg-slate-300 p-5 lg:p-10 my-10">
       <div className="bg-base-100 w-90 lg:w-100 mx-auto shadow p-5 rounded-xl border-b-4 border-b-orange-500">
@@ -33,4 +39,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default MyProfile;
