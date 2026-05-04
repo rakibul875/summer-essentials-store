@@ -25,7 +25,7 @@ const NavBar = () => {
         <NavLink href={"/product"}>Product</NavLink>
       </li>
       <li className="font-semibold text-lg">
-        <NavLink href={"/my-profile"}>My Profile</NavLink>
+        {user&&<NavLink href={"/my-profile"}>My Profile</NavLink>}
       </li>
     </>
   );
