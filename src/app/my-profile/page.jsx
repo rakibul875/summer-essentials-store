@@ -7,24 +7,8 @@ import { useRouter } from "next/navigation";
 import React from "react";
 
 const MyProfile = () => {
-  //edit
-  const router = useRouter();
-
   const userData = authClient.useSession();
   const user = userData.data?.user;
-  //edit
-  // if(!user){
-  //  router.push('/login')
-  // }
-
- { onSuccess: (ctx) => {
-    router.back()
-    
-  },{
-    onError:(ctx)=>{
-      router.push('/login')
-    }
-  }}
 
   return (
     <div className="container mx-auto bg-slate-300 p-5 lg:p-10 my-10">

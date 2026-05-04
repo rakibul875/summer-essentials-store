@@ -2,12 +2,15 @@
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaGoogle } from "react-icons/fa6";
 import { toast } from "react-toastify";
 
+
 const LoginPage = () => {
+
+   const [loading ,setLoading]=useState(false)
 
   const router=useRouter()
     
@@ -48,6 +51,7 @@ const LoginPage = () => {
 //   console.log(res);
 // };
 const handelLogin = async (data) => {
+  setLoading(true)
   const { data: res, error } = await authClient.signIn.email({
     email: data.email,
     password: data.password,
@@ -59,9 +63,11 @@ const handelLogin = async (data) => {
 
   if (error) {
     toast.error(error.message);
+    setLoading(false)
     return;
   }else{
     toast.success('Login successful')
+    setLoading(false)
   }
 
   console.log(res);
@@ -112,7 +118,7 @@ const handelGoogleLogin = async () => {
               <p className="text-red-600">{errors.password.message}</p>
             )}
           </fieldset>
-          <button className="btn w-full bg-slate-800 text-white">Login</button>
+          <button disabled={loading} className="btn w-full bg-slate-800 text-white">{loading ? "Loading..." : "Login"}</button>
         </form>
 
         <button

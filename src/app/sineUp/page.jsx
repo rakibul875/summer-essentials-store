@@ -2,12 +2,14 @@
 import { authClient } from "@/lib/auth-client";
 import { router } from "better-auth/api";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaGoogle } from "react-icons/fa6";
 import { toast } from "react-toastify";
 
 const RegisterPage = () => {
+
+  const [registerLoading ,setRegisterLoading]=useState(false)
   const rout = useRouter();
   const {
     register,
@@ -16,6 +18,7 @@ const RegisterPage = () => {
   } = useForm();
 
   const handelRegister = async (data) => {
+    setRegisterLoading(true)
     const { name, image, email, password } = data;
 
     const { data: res, error } = await authClient.signUp.email(
@@ -30,9 +33,11 @@ const RegisterPage = () => {
         onSuccess: (ctx) => {
           rout.push('/login');
           toast.success(`SingUp Successfully`);
+          setRegisterLoading(false)
         },
         onError: (ctx) => {
           toast.error(`${ctx.error.message}`);
+          setRegisterLoading(false)
         },
       },
     );
@@ -98,8 +103,8 @@ const RegisterPage = () => {
               <p className="text-red-600">{errors.password.message}</p>
             )}
           </fieldset>
-          <button className="btn w-full bg-slate-800 text-white">
-            Register
+          <button disabled={registerLoading} className="btn w-full bg-slate-800 text-white">
+            {registerLoading ? "Registering..." : "Register"}
           </button>
         </form>
         <p className="text-center text-2xl text-gray-500">Or</p>
